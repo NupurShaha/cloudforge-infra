@@ -1,0 +1,32 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+*.tfvars
+!example.tfvars
+.terraform.lock.hcl
+
+# Terragrunt
+.terragrunt-cache/
+
+# Credentials — NEVER commit these
+*.json
+!package.json
+credentials/
+*.pem
+*.key
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+crash.log
