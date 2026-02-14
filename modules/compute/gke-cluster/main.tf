@@ -86,11 +86,6 @@ resource "google_container_cluster" "primary" {
     workload_pool = "${var.project_id}.svc.id.goog"
   }
 
-  # Network Policy (Calico) — control pod-to-pod traffic
-  network_policy {
-    enabled  = true
-    provider = "CALICO"
-  }
 
   # Dataplane V2 enables network policy without needing Calico addon
   datapath_provider = "ADVANCED_DATAPATH"
@@ -136,9 +131,6 @@ resource "google_container_cluster" "primary" {
       disabled = false     # Enable GCP Ingress controller
     }
     horizontal_pod_autoscaling {
-      disabled = false
-    }
-    network_policy_config {
       disabled = false
     }
     gce_persistent_disk_csi_driver_config {

@@ -61,7 +61,7 @@ fi
 echo ""
 echo "⚠️  IMPORTANT: Set a budget alert in the GCP Console!"
 echo "   Go to: Billing → Budgets & alerts → Create budget"
-echo "   Set alert at ₹500 ($6) to avoid surprises."
+echo "   Set alert at 500 INR to avoid surprises."
 echo ""
 
 echo "──────────────────────────────────────────────────────"
