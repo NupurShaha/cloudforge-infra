@@ -4,6 +4,6 @@
 
 locals {
   environment = "prod"
-  project_id  = "YOUR-GCP-PROJECT-ID-PROD"   # Separate project in production
+  project_id  = "bastion-project-409309"   # Separate project in production
   region      = "asia-south1"
 }
