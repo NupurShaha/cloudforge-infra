@@ -15,7 +15,7 @@ terraform {
 
 dependency "networking" {
   config_path = "../networking"
-
+  skip_outputs = true
   mock_outputs = {
     vpc_self_link          = "projects/mock/global/networks/mock"
     private_service_range  = "mock-range"

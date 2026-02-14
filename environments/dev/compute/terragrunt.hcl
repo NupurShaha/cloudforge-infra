@@ -14,7 +14,11 @@ terraform {
 }
 
 # GKE depends on networking being deployed first
+
+  
+ 
 dependency "networking" {
+
   config_path = "../networking"
 
   # Mock outputs for `terraform validate` and `plan` when networking hasn't been applied yet
@@ -29,10 +33,6 @@ dependency "networking" {
   mock_outputs_allowed_terraform_commands = ["validate", "plan"]
 }
 
-inputs = {
-  cluster_name = "cloudforge-dev"
-
-  # From networking dependency
   vpc_self_link       = dependency.networking.outputs.vpc_self_link
   subnet_self_link    = dependency.networking.outputs.app_subnet_self_link
   pods_range_name     = dependency.networking.outputs.pods_range_name
