@@ -68,10 +68,11 @@ inputs = {
   # Release channel
   release_channel = "REGULAR"
 
-  # Maintenance window — weekends only
-  maintenance_start_time = "2024-01-01T04:00:00Z"
-  maintenance_end_time   = "2024-01-01T08:00:00Z"
-  maintenance_recurrence = "FREQ=WEEKLY;BYDAY=SA,SU"
+
+  # Maintenance window — daily at 4 AM UTC
+  maintenance_start_time = "2026-03-01T04:00:00Z"
+  maintenance_end_time   = "2026-03-01T08:00:00Z"
+  maintenance_recurrence = "FREQ=DAILY"
 
   # Tenant namespaces to create
   tenant_namespaces = ["tenant-a", "tenant-b", "shared-services"]

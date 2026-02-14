@@ -69,19 +69,4 @@ resource "google_kms_crypto_key" "keys" {
   }
 }
 
-# ─── IAM: Grant Cloud SQL service agent access to KMS ─────────
-# This allows Cloud SQL to use the CMEK key for encryption
-data "google_project" "current" {
-  project_id = var.project_id
-}
 
-resource "google_kms_crypto_key_iam_member" "cloudsql_cmek" {
-  for_each = {
-    for k, v in var.kms_keys : k => v
-    if k == "db-encryption"
-  }
-
-  crypto_key_id = google_kms_crypto_key.keys[each.key].id
-  role          = "roles/cloudkms.cryptoKeyEncrypterDecrypter"
-  member        = "serviceAccount:service-${data.google_project.current.number}@gcp-sa-cloud-sql.iam.gserviceaccount.com"
-}

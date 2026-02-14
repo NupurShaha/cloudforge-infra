@@ -40,29 +40,37 @@ inputs = {
   alert_policies = {
     gke-high-cpu = {
       display_name = "GKE Node CPU > 80%"
-      metric       = "kubernetes.io/node/cpu/allocatable_utilization"
-      threshold    = 0.8
+      metric         = "kubernetes.io/node/cpu/allocatable_utilization"
+      resource_type = "k8s_node"
+      resource_type  = "k8s_node"
+      threshold      = 0.8
       duration     = "300s"
       comparison   = "COMPARISON_GT"
     }
     gke-high-memory = {
       display_name = "GKE Node Memory > 85%"
-      metric       = "kubernetes.io/node/memory/allocatable_utilization"
-      threshold    = 0.85
+      metric         = "kubernetes.io/node/memory/allocatable_utilization"
+      resource_type = "k8s_node"
+      resource_type  = "k8s_node"
+      threshold      = 0.85
       duration     = "300s"
       comparison   = "COMPARISON_GT"
     }
     sql-high-cpu = {
       display_name = "Cloud SQL CPU > 80%"
-      metric       = "cloudsql.googleapis.com/database/cpu/utilization"
-      threshold    = 0.8
+      metric         = "cloudsql.googleapis.com/database/cpu/utilization"
+      resource_type = "cloudsql_database"
+      resource_type  = "cloudsql_database"
+      threshold      = 0.8
       duration     = "300s"
       comparison   = "COMPARISON_GT"
     }
     sql-high-connections = {
       display_name = "Cloud SQL Connections > 80% of max"
-      metric       = "cloudsql.googleapis.com/database/postgresql/num_backends"
-      threshold    = 200
+      metric         = "cloudsql.googleapis.com/database/postgresql/num_backends"
+      resource_type = "cloudsql_database"
+      resource_type  = "cloudsql_database"
+      threshold      = 200
       duration     = "120s"
       comparison   = "COMPARISON_GT"
     }

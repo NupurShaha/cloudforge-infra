@@ -25,7 +25,9 @@ variable "alert_policies" {
     metric       = string
     threshold    = number
     duration     = optional(string, "300s")
-    comparison   = optional(string, "COMPARISON_GT")
+    comparison     = optional(string, "COMPARISON_GT")
+    resource_type = string
+    resource_type  = string
   }))
   default = {}
 }

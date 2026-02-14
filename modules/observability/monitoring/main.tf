@@ -31,7 +31,7 @@ resource "google_monitoring_alert_policy" "alerts" {
   conditions {
     display_name = each.value.display_name
     condition_threshold {
-      filter          = "metric.type=\"${each.value.metric}\" AND resource.type=\"*\""
+      filter          = "metric.type=\"${each.value.metric}\" AND resource.type=\"${each.value.resource_type}\""
       duration        = each.value.duration
       comparison      = each.value.comparison
       threshold_value = each.value.threshold

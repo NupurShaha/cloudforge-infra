@@ -26,9 +26,6 @@ dependency "compute" {
 inputs = {
   # Secrets to create
   secrets = {
-    db-password = {
-      description = "Cloud SQL application user password"
-    }
     redis-auth = {
       description = "Memorystore Redis AUTH token"
     }
