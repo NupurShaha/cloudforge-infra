@@ -4,6 +4,6 @@
 
 locals {
   environment = "dev"
-  project_id  = "YOUR-GCP-PROJECT-ID"   # ← CHANGE THIS
+  project_id  = "bastion-project-409309"   # ← CHANGE THIS
   region      = "asia-south1"            # Mumbai — closest to you in Pune
 }
